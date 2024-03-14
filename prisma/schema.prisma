@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+
+enum AnnualIncomeRange {
+
+  ZeroToTwoFiftyThousandINR
+  TwoFiftyThousandOneToFiveHundredThousandINR
+  FiveHundredThousandOneToHundredThousandINR
+  MoreThanHundredThousandINR
+
+}
+
+ model Investor{
+      id    String @id @default(auto()) @map("_id") @db.ObjectId
+      fullName String 
+      emailId String @unique
+      mobileNumber String @unique
+      dateofBirth DateTime @db.Date
+      password String?
+      emailVerified Boolean @default(false)
+      phoneNumberVerified Boolean @default(false)
+      selfieImagePath String?
+      addressImagePath String?
+      employmentImagePath String?
+      additionalDocumentImagePath String?
+      industry String?
+      organization String?
+      roleAtWork String?
+      workingDuration String?
+      incomeRange AnnualIncomeRange?
+      profileUserImagePath String?
+      profileEmail String ?
+      investmentPreference String?
+      addressOne String?
+      addressTwo String?
+      addressThree String?
+      pinCode String?
+      state String?
+      city String?
+  }
