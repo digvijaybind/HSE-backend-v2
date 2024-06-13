@@ -1,9 +1,13 @@
 const jwt = require('jsonwebtoken');
 
-//generate a token for every Admin with their id when called
-
-const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '3d' });
+const generateAccessToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '15m' });
 };
 
-module.exports = { generateToken };
+const generateRefreshToken = (id) => {
+  return jwt.sign({ id }, process.env.REFRESH_TOKEN_SECRET, {
+    expiresIn: '7d',
+  });
+};
+
+module.exports = { generateAccessToken, generateRefreshToken };
