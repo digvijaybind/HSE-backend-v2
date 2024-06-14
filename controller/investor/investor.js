@@ -168,49 +168,7 @@ const setPassword = asyncHandler(async (req, res) => {
             },
           });
 
-          // if (InvestorsWithSetPassword !== null || undefined) {
-          //   var options = {
-          //     method: 'POST',
-          //     url: 'https://api.sendchamp.com/api/v1/verification/create',
-          //     headers: {
-          //       Accept: 'application/json',
-          //       'Content-Type': 'application/json',
-          //       Authorization:
-          //         'Bearer sendchamp_live_$2a$10$nsQfJed9oUKkSsRjIVLFg.HS/EJT0yzf5YzgqDZ18eE1q8WnauEQy',
-          //     },
-          //     body: JSON.stringify({
-          //       channel: 'sms',
-          //       token_type: 'numeric',
-          //       sender: 'Sendchamp',
-          //       token_length: '4',
-          //       expiration_time: 8,
-          //       customer_email_address: 'miraclewebdev2@gmail.com',
-          //       meta_data: {
-          //         first_name: 'ok',
-          //       },
-          //     }),
-          //   };
-
-          //   request(options, function (error, response) {
-          //     if (error) throw new Error(error);
-          //     console.log('this is it nowmmm', response.body);
-          //   });
-          //   // sdk.auth(`Bearer ${process.env.SENDCHAMP_KEY}`);
-          //   // console.log(sdk);
-          //   // sdk
-          //   //   .server({
-          //   //     meta_data: {
-          //   //       first_name: 'ok',
-          //   //     },
-          //   //     channel: 'sms',
-          //   //     token_type: 'numeric',
-          //   //     token_length: 4,
-          //   //     expiration_time: 8,
-          //   //     customer_email_address: 'miraclewebdev2@gmail.com',
-          //   //   })
-          //   //   .then(({ data }) => console.log(data))
-          //   //   .catch((err) => console.error(err));
-          // }
+      
           res.json(InvestorsWithSetPassword);
         }
       }

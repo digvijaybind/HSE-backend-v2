@@ -1,11 +1,9 @@
 const express = require('express');
 const app = express();
-const redis = require('redis');
-const { promisify } = require('util');
+
 const session = require('express-session');
 const dotenv = require('dotenv').config();
-const PORT = process.env.PORT || 4000;
-const REDIS_PORT = process.env.REDIS_PORT;
+const PORT = process.env.PORT || 3000;
 const authInvestorRouter = require('./routes/investorAuthRoute');
 const { notFound, errorHandler } = require('./middlewares/errorHandler');
 const bodyParser = require('body-parser');

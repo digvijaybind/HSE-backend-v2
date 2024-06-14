@@ -1,7 +1,6 @@
 const { PrismaClient } = require('@prisma/client');
 const asyncHandler = require('express-async-handler');
-const { superBase } = require('../../config/supabse');
-const { generateToken } = require('../../config/jwtToken');
+
 const dotenv = require('dotenv');
 dotenv.config();
 const argon = require('argon2');
